@@ -43,11 +43,7 @@ const Collection = () => {
   const nftModule = useMemo(() => {
     if (!provider) return
 
-    const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      //   AlchemyAPIで作成したHTTP
-      'https://eth-rinkeby.alchemyapi.io/v2/INjSevyt3zKP9ReNYo-fen2IIpqvdgtJ'
-    )
+    const sdk = new ThirdwebSDK(provider.getSigner())
     return sdk.getNFTModule(collectionId)
   }, [provider])
 
@@ -64,11 +60,7 @@ const Collection = () => {
   const marketPlaceModule = useMemo(() => {
     if (!provider) return
 
-    const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-      //   AlchemyAPIで作成したHTTP
-      'https://eth-rinkeby.alchemyapi.io/v2/INjSevyt3zKP9ReNYo-fen2IIpqvdgtJ'
-    )
+    const sdk = new ThirdwebSDK(provider.getSigner())
     return sdk.getMarketplaceModule(
       // ThirdWebのMarketPlaceのアドレス
       '0x8b4ED7435cf55004eEEF66eF84b14b72429Fa5d4'
@@ -98,8 +90,6 @@ const Collection = () => {
 
     const collectionData = await sanityClient.fetch(query)
 
-    console.log(collectionData, '🔥')
-
     // the query returns 1 object inside of an array
     await setCollection(collectionData[0])
   }
@@ -108,8 +98,6 @@ const Collection = () => {
     fetchCollectionData()
   }, [collectionId])
 
-  console.log(router.query)
-  console.log(router.query.collectionId)
   return (
     <div className="overflow-hidden">
       <Header />

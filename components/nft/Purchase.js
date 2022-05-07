@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-
 import { HiTag } from 'react-icons/hi'
 import { IoMdWallet } from 'react-icons/io'
 import toast, { Toaster } from 'react-hot-toast'
@@ -42,7 +41,6 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
     quantityDesired = 1,
     module = marketPlaceModule
   ) => {
-    console.log(listingId, quantityDesired, module, 'david')
     // yo RAZA lets goooo!!!
     //yo Qazi, ok
     // sure okay about to run it...
