@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import { HiTag } from 'react-icons/hi'
 import { IoMdWallet } from 'react-icons/io'
 import toast, { Toaster } from 'react-hot-toast'
@@ -24,7 +25,6 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
 
   useEffect(() => {
     if (!selectedMarketNft || !selectedNft) return
-
     setEnableButton(true)
   }, [selectedMarketNft, selectedNft])
 
@@ -41,6 +41,7 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
     quantityDesired = 1,
     module = marketPlaceModule
   ) => {
+    console.log(listingId)
     // yo RAZA lets goooo!!!
     //yo Qazi, ok
     // sure okay about to run it...
@@ -54,7 +55,6 @@ const MakeOffer = ({ isListed, selectedNft, listings, marketPlaceModule }) => {
         quantityDesired: quantityDesired,
       })
       .catch((error) => console.error(error))
-
     confirmPurchase()
   }
 

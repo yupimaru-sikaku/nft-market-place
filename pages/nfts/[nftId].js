@@ -26,7 +26,7 @@ const Nft = () => {
     if (!provider) return
 
     const sdk = new ThirdwebSDK(provider.getSigner())
-    return sdk.getNFTModule('0x6D866134Fc6367b910a1A362Efe8fa55DE94BB90')
+    return sdk.getNFTModule('0x72E0D0bB7221F353FaeF78214A722146571C0cdF')
   }, [provider])
 
   // get all NFTs in the collection
@@ -34,9 +34,7 @@ const Nft = () => {
     if (!nftModule) return
     ;(async () => {
       const nfts = await nftModule.getAll()
-
       const selectedNftItem = nfts.find((nft) => nft.id === router.query.nftId)
-
       setSelectedNft(selectedNftItem)
     })()
   }, [nftModule])
@@ -46,7 +44,7 @@ const Nft = () => {
 
     const sdk = new ThirdwebSDK(provider.getSigner())
     return sdk.getMarketplaceModule(
-      '0x8b4ED7435cf55004eEEF66eF84b14b72429Fa5d4'
+      '0xe87e9149cB49461d79Cf7EF2DEa758d4D4ccB9D1'
     )
   }, [provider])
 

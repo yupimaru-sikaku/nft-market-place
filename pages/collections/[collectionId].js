@@ -63,7 +63,7 @@ const Collection = () => {
     const sdk = new ThirdwebSDK(provider.getSigner())
     return sdk.getMarketplaceModule(
       // ThirdWebのMarketPlaceのアドレス
-      '0x8b4ED7435cf55004eEEF66eF84b14b72429Fa5d4'
+      '0xe87e9149cB49461d79Cf7EF2DEa758d4D4ccB9D1'
     )
   }, [provider])
 
